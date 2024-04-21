@@ -1,8 +1,7 @@
 package org.example.CatalogAppWeb2.DAO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.antlr.v4.runtime.misc.NotNull;
-
 import java.sql.Date;
 
 
@@ -34,13 +33,19 @@ public class Grade {
     private int subjectId;
     @Column(name ="student")
     private int studentId;
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn (name ="student", insertable = false, updatable = false )
     @JsonIgnore
     //nu am reusit sa scot eroarea cu lazy load
-    //am reusit
-    private StudentOfSubject student;
-    */
+    private Student student;
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     public int getGradeId() {
         return gradeId;

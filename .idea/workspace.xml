@@ -4,23 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96e6f6b-b6c2-497f-9fd6-973c70b35907" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/CatalogAppWeb2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/GradeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Grade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Repository/GradeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeUndoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="f96e6f6b-b6c2-497f-9fd6-973c70b35907" name="Changes" comment="fist commit, app is incomplete">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/SubjectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Repository/StudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Repository/SubjectRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/SubjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/GradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/GradeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Grade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Repository/GradeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Repository/GradeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -90,6 +88,19 @@
       <option name="presentableId" value="Default" />
       <updated>1713598268461</updated>
     </task>
+    <task id="LOCAL-00001" summary="fist commit, app is incomplete">
+      <option name="closed" value="true" />
+      <created>1713690833229</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713690833229</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fist commit, app is incomplete" />
+    <option name="LAST_COMMIT_MESSAGE" value="fist commit, app is incomplete" />
   </component>
 </project>

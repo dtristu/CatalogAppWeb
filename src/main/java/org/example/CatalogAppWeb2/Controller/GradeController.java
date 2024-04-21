@@ -39,13 +39,20 @@ public ResponseEntity<Grade> deleteGrade(@PathVariable("id") int id) {
     }
     }
 @PostMapping(consumes = "application/json")
-    public Grade postGrade(@RequestBody Grade g)
+    public ResponseEntity<Grade> postGrade(@RequestBody Grade g)
 {
-    return g=gradeService.postGrade(g);
+    Optional<Grade> o=gradeService.postGrade(g);
+    if (o.isPresent())
+    {return new ResponseEntity<Grade>(g,HttpStatus.OK);}
+    else {return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);}
+
 }
 @PutMapping(consumes = "application/json")
-    public Grade putGrade(@RequestBody Grade g){
-    return g=gradeService.putGrade(g);
+    public ResponseEntity<Grade> putGrade(@RequestBody Grade g){
+    Optional<Grade> o=gradeService.putGrade(g);
+    if (o.isPresent())
+    {return new ResponseEntity<Grade>(g,HttpStatus.OK);}
+    else {return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);}
 }
 @GetMapping(value = "/undo")
     public String undo(){
