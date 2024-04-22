@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96e6f6b-b6c2-497f-9fd6-973c70b35907" name="Changes" comment="fist commit, app is incomplete">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/SubjectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Repository/StudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Repository/SubjectRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/SubjectService.java" afterDir="false" />
+    <list default="true" id="f96e6f6b-b6c2-497f-9fd6-973c70b35907" name="Changes" comment="second commit, basic functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Config/OpenApiConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/GradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/GradeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Grade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Repository/GradeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Repository/GradeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/CatalogAppWeb2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/CatalogAppWeb2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,21 +39,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Run.executor": "Run",
-    "Maven.CatalogAppWeb2 [clean,install].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Octav/IdeaProjects/CatalogAppWeb2",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Run.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CatalogAppWeb2 [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Octav/IdeaProjects/CatalogAppWeb2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Octav\IdeaProjects\CatalogAppWeb2\src\main\resources" />
@@ -96,11 +91,20 @@
       <option name="project" value="LOCAL" />
       <updated>1713690833229</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="second commit, basic functionality">
+      <option name="closed" value="true" />
+      <created>1713702885655</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713702885655</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fist commit, app is incomplete" />
-    <option name="LAST_COMMIT_MESSAGE" value="fist commit, app is incomplete" />
+    <MESSAGE value="second commit, basic functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit, basic functionality" />
   </component>
 </project>

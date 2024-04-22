@@ -27,7 +27,7 @@ public class GradeService {
         if (g.isPresent()) try {
             gradeUndoService.addToStack(g.get(),null,"delete");
             gradeRepository.deleteGradeByGradeId(id);
-        } catch (EmptyResultDataAccessException e){}
+        } catch (EmptyResultDataAccessException ignored){}
         return g;
     }
     @Transactional

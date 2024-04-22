@@ -42,6 +42,7 @@ public class GradeUndoService {
         {return "Nothing to undo!"; }
         Command c= stack.peek();
         stack.pop();
+        //noinspection EnhancedSwitchMigration
         switch (c.lastCommand){
             case "get":
                 r="Get command. Nothing to undo.";

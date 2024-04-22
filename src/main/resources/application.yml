@@ -4,3 +4,5 @@ spring:
     url: jdbc:postgresql://localhost:5432/catalogdb
     username: javaAccessRole
     password: QzoPf3$UDZvKFG
+
+
