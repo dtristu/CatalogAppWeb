@@ -17,7 +17,7 @@ public class Subject {
     @Column(name = "codmaterie")
     public int id;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(cascade = {CascadeType.MERGE})
     @JoinTable(
             name = "studenti_materii", schema = "mainschema",
             joinColumns = {@JoinColumn(name = "codmaterie")},

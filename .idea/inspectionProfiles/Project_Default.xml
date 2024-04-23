@@ -8,6 +8,7 @@
           <option value="CatalogAppWeb2" />
           <option value="CatalogAppWeb2" />
           <option value="CatalogAppWeb2" />
+          <option value="All libs from CatalogAppWeb2" />
         </list>
       </option>
       <option name="ignoredPackages">
@@ -15,10 +16,12 @@
           <option value="org.postgresql:postgresql:42.6.0" />
           <option value="org.yaml:snakeyaml:1.33" />
           <option value="com.google.guava:guava:18.0" />
+          <option value="org.postgresql:postgresql:42.6.0" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />

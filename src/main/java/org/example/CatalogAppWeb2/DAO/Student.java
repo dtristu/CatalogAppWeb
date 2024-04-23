@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name ="studenti",schema = "mainschema")
@@ -14,6 +16,7 @@ public class Student {
     private String name;
     @Id
     @Column(name = "nrmatricol")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToMany(mappedBy = "students")
@@ -56,6 +59,12 @@ public class Student {
 
     public void setSubjects(List<Subject> subjects) {
         this.subjects = subjects;
+    }
+    public void addSubject(Subject subject)
+    {
+        List<Subject> currentSubjects = Objects.requireNonNullElseGet(this.subjects, ArrayList::new);
+        currentSubjects.add(subject);
+        this.subjects=currentSubjects;
     }
 
     public List<Grade> getGrades() {
