@@ -41,6 +41,12 @@ public class StudentController {
         {return new ResponseEntity<Student>(o.get(),HttpStatus.OK);}
         else {return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);}
     }
-
+    @GetMapping(value = "/failingstudents/{subjectId}")
+    public ResponseEntity<List<Student>> getFailingStudentsBySubjectId(@PathVariable int subjectId){
+        List<Student> students=studentService.getFailingStudents(subjectId);
+        if (students.isEmpty())
+        {return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);}
+        return new ResponseEntity<>(students, HttpStatus.OK);
+    }
 
 }
