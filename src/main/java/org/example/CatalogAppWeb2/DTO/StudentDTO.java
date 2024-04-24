@@ -3,6 +3,7 @@ package org.example.CatalogAppWeb2.DTO;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name ="studenti",schema = "mainschema")
@@ -13,12 +14,12 @@ public class StudentDTO {
     @Column(name = "nrmatricol")
     private int id;
 
-    private List<Integer> subjectsId;
+    private Set<Integer> subjectsId;
 
     public StudentDTO() {
     }
 
-    public StudentDTO(String name, int id, List<Integer> subjectsId) {
+    public StudentDTO(String name, int id, Set<Integer> subjectsId) {
         this.name = name;
         this.id = id;
         this.subjectsId = subjectsId;
@@ -40,11 +41,11 @@ public class StudentDTO {
         this.name = name;
     }
 
-    public List<Integer> getSubjectsId() {
+    public Set<Integer> getSubjectsId() {
         return subjectsId;
     }
 
-    public void setSubjectsId(List<Integer> subjectsId) {
+    public void setSubjectsId(Set<Integer> subjectsId) {
         this.subjectsId = subjectsId;
     }
 }

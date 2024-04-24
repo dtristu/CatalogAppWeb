@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class SubjectService {
@@ -30,11 +32,12 @@ public class SubjectService {
     public List<Student> getStudentsBySubject(int id) {
     Subject subject=subjectRepository.getSubjectById(id);
     for (Student student:subject.getStudents())
-    {List<Grade> grades= student.getGrades();
-        grades=grades.stream().filter(e->e.getSubjectId()==id).toList();
+    {
+        Set<Grade> grades= student.getGrades();
+        grades=grades.stream().filter(e->e.getSubjectId()==id).collect(Collectors.toSet());
         student.setGrades(grades);
     }
-    return subject.getStudents();}
+    return subject.getStudents().stream().toList();}
 
     public List<Grade> getGradesBySubjectAndStudent(int subjectId, int studentId) {
     return gradeRepository.getGradeBySubjectIdAndStudentId(subjectId,studentId);

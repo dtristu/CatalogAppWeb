@@ -6,8 +6,9 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name ="studenti",schema = "mainschema")
@@ -22,12 +23,12 @@ public class Student {
     @ManyToMany(mappedBy = "students")
     @Fetch(FetchMode.JOIN)
     @JsonManagedReference
-    private List<Subject> subjects;
+    private Set<Subject> subjects;
 
     @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
-    private List<Grade> grades;
+    private Set<Grade> grades;
 
-    public Student(String name, int id, List<Subject> subjects, List<Grade> grades) {
+    public Student(String name, int id, Set<Subject> subjects, Set<Grade> grades) {
         this.name = name;
         this.id = id;
         this.subjects = subjects;
@@ -53,25 +54,25 @@ public class Student {
         this.id = id;
     }
 
-    public List<Subject> getSubjects() {
+    public Set<Subject> getSubjects() {
         return subjects;
     }
 
-    public void setSubjects(List<Subject> subjects) {
+    public void setSubjects(Set<Subject> subjects) {
         this.subjects = subjects;
     }
     public void addSubject(Subject subject)
     {
-        List<Subject> currentSubjects = Objects.requireNonNullElseGet(this.subjects, ArrayList::new);
+        Set<Subject> currentSubjects = Objects.requireNonNullElseGet(this.subjects, HashSet::new);
         currentSubjects.add(subject);
         this.subjects=currentSubjects;
     }
 
-    public List<Grade> getGrades() {
+    public Set<Grade> getGrades() {
         return grades;
     }
 
-    public void setGrades(List<Grade> grades) {
+    public void setGrades(Set<Grade> grades) {
         this.grades = grades;
     }
 }

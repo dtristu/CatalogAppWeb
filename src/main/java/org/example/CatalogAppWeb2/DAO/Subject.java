@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name ="materii",schema = "mainschema")
@@ -24,12 +25,12 @@ public class Subject {
             inverseJoinColumns = {@JoinColumn(name = "nrmatricol")}
     )
     @JsonBackReference
-    private List<Student> students;
+    private Set<Student> students;
 
     public Subject() {
     }
 
-    public Subject(String name, int id, List<Student> students) {
+    public Subject(String name, int id, Set<Student> students) {
         this.name = name;
         this.id = id;
         this.students = students;
@@ -51,11 +52,11 @@ public class Subject {
         this.id = id;
     }
 
-    public List<Student> getStudents() {
+    public Set<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
+    public void setStudents(Set<Student> students) {
         this.students = students;
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Transactional
 @Service
@@ -29,8 +30,8 @@ public class StudentService {
     public boolean doesAssociationExist (int studentId, int subjectId){
     boolean b =false;
         Student student=studentRepository.getStudentById(studentId);
-        List<Subject> subjects=student.getSubjects();
-        subjects=subjects.stream().filter(e->e.getId()==subjectId).toList();
+        Set<Subject> subjects=student.getSubjects();
+        subjects=subjects.stream().filter(e->e.getId()==subjectId).collect(Collectors.toSet());
         if (!subjects.isEmpty())
         {b=true;}
     return b;}
@@ -80,8 +81,8 @@ public class StudentService {
         List<Student> students = subjectService.getStudentsBySubject(subjectId);
 
         for (Student student : students) {
-            List<Grade> grades = student.getGrades();
-            grades = grades.stream().filter(e -> e.getSubjectId() == subjectId).toList();
+            Set<Grade> grades = student.getGrades();
+            grades = grades.stream().filter(e -> e.getSubjectId() == subjectId).collect(Collectors.toSet());
             student.setGrades(grades);
         }
 
@@ -151,12 +152,12 @@ public class StudentService {
         s.setId(studentDTO.getId());
         s.setName(studentDTO.getName());
 
-        List<Integer> subjectsId=studentDTO.getSubjectsId();
+        Set<Integer> subjectsId=studentDTO.getSubjectsId();
         for(Integer i:subjectsId)
         {
          Subject subject=subjectRepository.getSubjectById(i);
          s.addSubject(subject);
-         List<Student> students=subject.getStudents();
+         Set<Student> students=subject.getStudents();
          students.add(s);
          subject.setStudents(students);
         }
