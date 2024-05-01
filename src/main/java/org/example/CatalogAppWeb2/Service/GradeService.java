@@ -17,6 +17,7 @@ public class GradeService {
     GradeUndoService gradeUndoService;
     @Autowired
     StudentService studentService;
+
     @Transactional
     public Optional<Grade> getGrade(int id) {
         return Optional.ofNullable(gradeRepository.getGradeByGradeId(id));
@@ -40,17 +41,17 @@ public class GradeService {
         else { return Optional.empty();}
     }
     @Transactional
-    public Optional<Grade> putGrade(Grade g) {
-        if (studentService.doesAssociationExist(g.getStudentId(),g.getSubjectId())){
-        Optional<Grade> g2= Optional.ofNullable(gradeRepository.getGradeByGradeId(g.getGradeId()));
-        if (g2.isPresent())
-        {   gradeRepository.save(g);
-            gradeUndoService.addToStack(g,g2.get(),"put");}
+    public Optional<Grade> putGrade(Grade newGrade) {
+        if (studentService.doesAssociationExist(newGrade.getStudentId(),newGrade.getSubjectId())){
+        Optional<Grade> oldGrade= Optional.ofNullable(gradeRepository.getGradeByGradeId(newGrade.getGradeId()));
+        if (oldGrade.isPresent())
+        {   gradeRepository.save(newGrade);
+            gradeUndoService.addToStack(newGrade,oldGrade.get(),"put");}
         else
-        {   g2=Optional.of(g);
-            gradeRepository.save(g);
-            gradeUndoService.addToStack(g,g2.get(),"putNew");}
-        return Optional.of(g);}
+        {
+            gradeRepository.save(newGrade);
+            gradeUndoService.addToStack(newGrade,null,"putNew");}
+        return Optional.of(newGrade);}
         else {return Optional.empty();}
     }
 }

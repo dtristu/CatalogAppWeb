@@ -14,8 +14,6 @@ public class SubjectDTO {
     @Column(name = "codmaterie")
     public int id;
 
-
-
     public SubjectDTO() {
     }
 

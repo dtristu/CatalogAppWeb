@@ -13,9 +13,11 @@ import java.util.Stack;
 @Service
 @Transactional
 public class GradeUndoService {
+
     private final Stack<Command> stack=new Stack<>();
     @Autowired
     GradeRepository gradeRepository;
+
     private static class Command {
         private final String lastCommand;
         private final Grade grade;
@@ -40,6 +42,7 @@ public class GradeUndoService {
         String r="";
         if (stack.isEmpty())
         {return "Nothing to undo!"; }
+
         Command c= stack.peek();
         stack.pop();
         //noinspection EnhancedSwitchMigration
@@ -74,13 +77,9 @@ public class GradeUndoService {
     }
     @Transactional
     private void undoPutNew(Grade grade, Grade grade2) {
-        if (grade.getGradeId() != grade2.getGradeId()) {
-            gradeRepository.deleteGradeByGradeId(grade.getGradeId());}
-        else {
-           try {
-               gradeRepository.deleteGradeByGradeId(grade.getGradeId());
-           } catch (EmptyResultDataAccessException ignored){}
-            gradeRepository.save(grade2);}
+        try {
+            gradeRepository.deleteGradeByGradeId(grade.getGradeId());
+        } catch (EmptyResultDataAccessException ignored){}
     }
     @Transactional
     private void undoPut(Grade grade, Grade grade2) {

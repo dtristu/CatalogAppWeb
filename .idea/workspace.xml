@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96e6f6b-b6c2-497f-9fd6-973c70b35907" name="Changes" comment="5th commit, added failing students">
+    <list default="true" id="f96e6f6b-b6c2-497f-9fd6-973c70b35907" name="Changes" comment="6th commit, replaced lists with sets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Subject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DTO/StudentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DTO/StudentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/SubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/SubjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/GradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/GradeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/SubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/SubjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DTO/SubjectDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DTO/SubjectDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeUndoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/GradeUndoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713886086411</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="6th commit, replaced lists with sets">
+      <option name="closed" value="true" />
+      <created>1713970978843</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713970978843</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +161,7 @@
     <MESSAGE value="3rd commit, added swagger" />
     <MESSAGE value="4th commit, added more put methods" />
     <MESSAGE value="5th commit, added failing students" />
-    <option name="LAST_COMMIT_MESSAGE" value="5th commit, added failing students" />
+    <MESSAGE value="6th commit, replaced lists with sets" />
+    <option name="LAST_COMMIT_MESSAGE" value="6th commit, replaced lists with sets" />
   </component>
 </project>

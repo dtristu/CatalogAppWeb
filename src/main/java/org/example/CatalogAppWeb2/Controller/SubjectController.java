@@ -20,6 +20,7 @@ import java.util.Optional;
 public class SubjectController {
     @Autowired
     SubjectService subjectService;
+
     @GetMapping
     public ResponseEntity<List<Subject>> getSubjects()
     {

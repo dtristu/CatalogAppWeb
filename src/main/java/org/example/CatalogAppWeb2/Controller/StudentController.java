@@ -19,6 +19,7 @@ import java.util.Optional;
 public class StudentController {
     @Autowired
     StudentService studentService;
+
     @GetMapping(value = "/topstudents/{subjectId}")
     public ResponseEntity<List<Student>> getTopStudentsBySubject(@PathVariable int subjectId){
         List<Student> students=studentService.getTopStudents(subjectId);
