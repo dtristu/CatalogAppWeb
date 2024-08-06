@@ -25,7 +25,7 @@ public class SubjectService {
     public List<Subject> getSubjects() {
         Iterable<Subject> s=subjectRepository.findAll();
         List<Subject> subjects=new ArrayList<>();
-    s.forEach(subjects::add);
+            s.forEach(subjects::add);
     return subjects;
     }
 

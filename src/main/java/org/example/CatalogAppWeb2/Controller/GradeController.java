@@ -56,8 +56,8 @@ public ResponseEntity<Grade> deleteGrade(@PathVariable("id") int id) {
     else {return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);}
 }
 @GetMapping(value = "/undo")
-    public String undo(){
-    return gradeUndoService.undo();
+    public ResponseEntity<String> undo(){
+    return new ResponseEntity<String>(gradeUndoService.undo(),HttpStatus.OK);
 }
 }
 

@@ -3,6 +3,7 @@ package org.example.CatalogAppWeb2.DAO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.sql.Date;
+import java.util.Objects;
 
 
 @Entity
@@ -86,5 +87,18 @@ public class Grade {
 
     public void setSubjectId(int subjectId) {
         this.subjectId = subjectId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Grade grade = (Grade) o;
+        return getGradeId() == grade.getGradeId() && getGradeValue() == grade.getGradeValue() && getSubjectId() == grade.getSubjectId() && getStudentId() == grade.getStudentId() && Objects.equals(getDate(), grade.getDate()) && Objects.equals(getStudent(), grade.getStudent());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getGradeId());
     }
 }

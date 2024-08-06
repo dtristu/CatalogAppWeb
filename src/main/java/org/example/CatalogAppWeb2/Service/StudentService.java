@@ -45,6 +45,7 @@ public class StudentService {
             double avg = student.getGrades().stream().mapToInt(Grade::getGradeValue).average().orElse(0);
             orderedStudents.add(new StudentAverage(avg, student));
         }
+        //orderedStudents.sort(e-> e.average );
         //bubble sort
         int n=orderedStudents.size();
         for(int i = 0;i < n; i++){

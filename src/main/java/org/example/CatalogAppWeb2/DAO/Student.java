@@ -75,5 +75,18 @@ public class Student {
     public void setGrades(Set<Grade> grades) {
         this.grades = grades;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return getId() == student.getId() && Objects.equals(getName(), student.getName()) && Objects.equals(getSubjects(), student.getSubjects()) && Objects.equals(getGrades(), student.getGrades());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId());
+    }
 }
 
