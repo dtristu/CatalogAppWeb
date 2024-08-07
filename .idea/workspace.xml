@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96e6f6b-b6c2-497f-9fd6-973c70b35907" name="Changes" comment="7 comit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestSuite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Controller/GradeControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Controller/StudentControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Controller/SubjectControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Service/DataForTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Service/StudentServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Service/SubjectServiceTest.java" afterDir="false" />
+    <list default="true" id="f96e6f6b-b6c2-497f-9fd6-973c70b35907" name="Changes" comment="added test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/GradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/GradeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/SubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Controller/SubjectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Grade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DAO/Subject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/SubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/Service/SubjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DTO/StudentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DTO/StudentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DTO/SubjectDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CatalogAppWeb2/DTO/SubjectDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Service/DataForTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Service/DataForTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Service/StudentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Service/StudentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Service/SubjectServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CatalogAppWeb2/Service/SubjectServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,42 +47,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Run.executor": "Run",
-    "JUnit.GradeControllerTest.deleteGrade.executor": "Run",
-    "JUnit.GradeControllerTest.executor": "Coverage",
-    "JUnit.GradeControllerTest.getGrade.executor": "Run",
-    "JUnit.GradeControllerTest.postGrade.executor": "Run",
-    "JUnit.GradeControllerTest.undo.executor": "Run",
-    "JUnit.StudentControllerTest.executor": "Run",
-    "JUnit.StudentControllerTest.getTopStudents.executor": "Run",
-    "JUnit.StudentControllerTest.getTopStudentsBySubject.executor": "Run",
-    "JUnit.SubjectControllerTest.getGradesBySubjectAndStudent.executor": "Run",
-    "JUnit.SubjectControllerTest.getStudentsBySubject.executor": "Run",
-    "JUnit.SubjectControllerTest.getSubjects.executor": "Run",
-    "JUnit.SubjectControllerTest.putSubject.executor": "Run",
-    "JUnit.SubjectServiceTest.executor": "Run",
-    "JUnit.SubjectServiceTest.getGradesBySubjectAndStudent.executor": "Run",
-    "JUnit.SubjectServiceTest.getStudentsBySubject.executor": "Run",
-    "JUnit.SubjectServiceTest.getSubjects.executor": "Run",
-    "JUnit.SubjectServiceTest.putSubject.executor": "Run",
-    "JUnit.TestSuite.executor": "Run",
-    "Maven.CatalogAppWeb2 [clean,install].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Octav/IdeaProjects/Homework",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.4413793",
-    "settings.editor.selected.configurable": "settings.sync"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Run.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GradeControllerTest.deleteGrade.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GradeControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.GradeControllerTest.getGrade.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GradeControllerTest.postGrade.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GradeControllerTest.undo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudentControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudentControllerTest.getTopStudents.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudentControllerTest.getTopStudentsBySubject.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudentServiceTest.GetTopStudents2.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.StudentServiceTest.doesAssociationExist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudentServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StudentServiceTest.getTopStudents.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubjectControllerTest.getGradesBySubjectAndStudent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubjectControllerTest.getStudentsBySubject.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubjectControllerTest.getSubjects.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubjectControllerTest.putSubject.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubjectServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubjectServiceTest.getGradesBySubjectAndStudent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubjectServiceTest.getStudentsBySubject.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubjectServiceTest.getSubjects.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SubjectServiceTest.putSubject.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestSuite.executor&quot;: &quot;Coverage&quot;,
+    &quot;Maven.CatalogAppWeb2 [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Octav/IdeaProjects/Homework&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4413793&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Octav\IdeaProjects\CatalogAppWeb2\src\main\resources" />
@@ -104,7 +105,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuite">
+  <component name="RunManager" selected="Application.Run">
     <configuration name="Run" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.CatalogAppWeb2.CatalogAppWeb2" />
       <module name="CatalogAppWeb2" />
@@ -127,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubjectServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StudentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CatalogAppWeb2" />
       <extension name="coverage">
         <pattern>
@@ -136,13 +137,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.CatalogAppWeb2.Service" />
-      <option name="MAIN_CLASS_NAME" value="org.example.CatalogAppWeb2.Service.SubjectServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CatalogAppWeb2.Service.StudentServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubjectServiceTest.getGradesBySubjectAndStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StudentServiceTest.GetTopStudents2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CatalogAppWeb2" />
       <extension name="coverage">
         <pattern>
@@ -151,14 +152,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.CatalogAppWeb2.Service" />
-      <option name="MAIN_CLASS_NAME" value="org.example.CatalogAppWeb2.Service.SubjectServiceTest" />
-      <option name="METHOD_NAME" value="getGradesBySubjectAndStudent" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CatalogAppWeb2.Service.StudentServiceTest" />
+      <option name="METHOD_NAME" value="GetTopStudents2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubjectServiceTest.getStudentsBySubject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StudentServiceTest.doesAssociationExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CatalogAppWeb2" />
       <extension name="coverage">
         <pattern>
@@ -167,14 +168,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.CatalogAppWeb2.Service" />
-      <option name="MAIN_CLASS_NAME" value="org.example.CatalogAppWeb2.Service.SubjectServiceTest" />
-      <option name="METHOD_NAME" value="getStudentsBySubject" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CatalogAppWeb2.Service.StudentServiceTest" />
+      <option name="METHOD_NAME" value="doesAssociationExist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubjectServiceTest.getSubjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StudentServiceTest.getTopStudents" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CatalogAppWeb2" />
       <extension name="coverage">
         <pattern>
@@ -183,8 +184,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.CatalogAppWeb2.Service" />
-      <option name="MAIN_CLASS_NAME" value="org.example.CatalogAppWeb2.Service.SubjectServiceTest" />
-      <option name="METHOD_NAME" value="getSubjects" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CatalogAppWeb2.Service.StudentServiceTest" />
+      <option name="METHOD_NAME" value="getTopStudents" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -217,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StudentServiceTest.GetTopStudents2" />
+        <item itemvalue="JUnit.StudentServiceTest.getTopStudents" />
+        <item itemvalue="JUnit.StudentServiceTest" />
+        <item itemvalue="JUnit.StudentServiceTest.doesAssociationExist" />
         <item itemvalue="JUnit.SubjectServiceTest.putSubject" />
-        <item itemvalue="JUnit.SubjectServiceTest.getGradesBySubjectAndStudent" />
-        <item itemvalue="JUnit.SubjectServiceTest.getStudentsBySubject" />
-        <item itemvalue="JUnit.SubjectServiceTest.getSubjects" />
-        <item itemvalue="JUnit.SubjectServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714556467999</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added tests">
+      <option name="closed" value="true" />
+      <created>1722952182120</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1722952182120</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,11 +329,13 @@
     <MESSAGE value="5th commit, added failing students" />
     <MESSAGE value="6th commit, replaced lists with sets" />
     <MESSAGE value="7 comit" />
-    <option name="LAST_COMMIT_MESSAGE" value="7 comit" />
+    <MESSAGE value="added tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CatalogAppWeb2$GradeControllerTest.ic" NAME="GradeControllerTest Coverage Results" MODIFIED="1722852779281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>org.example.CatalogAppWeb2.Controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/CatalogAppWeb2$TestSuite.ic" NAME="TestSuite Coverage Results" MODIFIED="1723029027051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

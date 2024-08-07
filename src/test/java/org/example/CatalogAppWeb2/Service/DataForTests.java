@@ -45,7 +45,7 @@ public class DataForTests {
 
         Grade grade1=new Grade(1,9,new Date(123),1,1);
         Grade grade2=new Grade(2,10,new Date(456),1,2);
-        Grade grade3=new Grade(3,9,new Date(789),2,1);
+        Grade grade3=new Grade(3,8,new Date(789),2,1);
         gradeSet.add(grade1);
         gradeSet.add(grade2);
         gradeSet.add(grade3);

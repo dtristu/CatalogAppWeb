@@ -1,22 +1,26 @@
 package org.example.CatalogAppWeb2.DAO;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name ="materii",schema = "mainschema")
+@Tag(name= "Subject")
 public class Subject {
 
     @Column(name = "numematerie")
+    @Schema(name = "Subject name", example = "Math")
     private String name;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codmaterie")
+    @Schema(name = "Subject Id", example = "1")
     public int id;
 
     @ManyToMany(cascade = {CascadeType.MERGE})
@@ -26,6 +30,7 @@ public class Subject {
             inverseJoinColumns = {@JoinColumn(name = "nrmatricol")}
     )
     @JsonBackReference
+    @Schema(name = "Students")
     private Set<Student> students;
 
     public Subject() {

@@ -1,31 +1,39 @@
 package org.example.CatalogAppWeb2.DAO;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name ="studenti",schema = "mainschema")
+@Tag(name="Student")
 public class Student {
     @Column(name = "nume")
+    @NotNull(message = "Student name cannot be null")
+    @Schema(name = "Student name", example = "Kevin")
     private String name;
     @Id
     @Column(name = "nrmatricol")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(name = "Student ID", example = "1")
     private int id;
 
     @ManyToMany(mappedBy = "students")
     @Fetch(FetchMode.JOIN)
     @JsonManagedReference
+    @Schema(name = "Subjects")
     private Set<Subject> subjects;
 
     @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
+    @Schema(name = "Grades")
     private Set<Grade> grades;
 
     public Student(String name, int id, Set<Subject> subjects, Set<Grade> grades) {
