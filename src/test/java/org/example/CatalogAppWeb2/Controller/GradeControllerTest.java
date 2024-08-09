@@ -21,53 +21,55 @@ import java.util.Optional;
 @ExtendWith(MockitoExtension.class)
 public class GradeControllerTest {
 
-    @Mock GradeService gradeService;
+    @Mock
+    GradeService gradeService;
     @Mock
     GradeUndoService gradeUndoService;
-    @InjectMocks GradeController gradeController;
+    @InjectMocks
+    GradeController gradeController;
     Grade testGrade;
     ResponseEntity<Grade> testResponseEntity;
 
     @BeforeEach
     void setUp() {
 
-    testGrade = new Grade(2,3,new Date(1234),4,5);
-    testResponseEntity = new ResponseEntity<>(testGrade, HttpStatus.OK);
+        testGrade = new Grade(2, 3, new Date(1234), 4, 5);
+        testResponseEntity = new ResponseEntity<>(testGrade, HttpStatus.OK);
     }
 
     @Test
     void getGrade() {
         Mockito.when(gradeService.getGrade(2)).thenReturn(Optional.ofNullable(testGrade));
         ResponseEntity<Grade> responseEntity = gradeController.getGrade(2);
-        Assertions.assertEquals(testResponseEntity,responseEntity);
+        Assertions.assertEquals(testResponseEntity, responseEntity);
     }
 
     @Test
     void deleteGrade() {
         Mockito.when(gradeService.deleteGrade(2)).thenReturn(Optional.ofNullable(testGrade));
         ResponseEntity<Grade> responseEntity = gradeController.deleteGrade(2);
-        Assertions.assertEquals(testResponseEntity,responseEntity);
+        Assertions.assertEquals(testResponseEntity, responseEntity);
     }
 
     @Test
     void postGrade() {
         Mockito.when(gradeService.postGrade(testGrade)).thenReturn(Optional.ofNullable(testGrade));
         ResponseEntity<Grade> responseEntity = gradeController.postGrade(testGrade);
-        Assertions.assertEquals(testResponseEntity,responseEntity);
+        Assertions.assertEquals(testResponseEntity, responseEntity);
     }
 
     @Test
     void putGrade() {
         Mockito.when(gradeService.putGrade(testGrade)).thenReturn(Optional.ofNullable(testGrade));
         ResponseEntity<Grade> responseEntity = gradeController.putGrade(testGrade);
-        Assertions.assertEquals(testResponseEntity,responseEntity);
+        Assertions.assertEquals(testResponseEntity, responseEntity);
     }
 
     @Test
     void undo() {
         Mockito.when(gradeUndoService.undo()).thenReturn("test");
-        ResponseEntity<String> responseEntity = new ResponseEntity<>(gradeUndoService.undo(),HttpStatus.OK) ;
-        Assertions.assertEquals(new ResponseEntity<String>("test", HttpStatus.OK),responseEntity);
+        ResponseEntity<String> responseEntity = new ResponseEntity<>(gradeUndoService.undo(), HttpStatus.OK);
+        Assertions.assertEquals(new ResponseEntity<String>("test", HttpStatus.OK), responseEntity);
 
     }
 }

@@ -22,36 +22,44 @@ public class GradeService {
     public Optional<Grade> getGrade(int id) {
         return Optional.ofNullable(gradeRepository.getGradeByGradeId(id));
     }
+
     @Transactional
     public Optional<Grade> deleteGrade(int id) {
-        Optional<Grade> g= Optional.ofNullable(gradeRepository.getGradeByGradeId(id));
+        Optional<Grade> g = Optional.ofNullable(gradeRepository.getGradeByGradeId(id));
         if (g.isPresent()) try {
-            gradeUndoService.addToStack(g.get(),null,"delete");
+            gradeUndoService.addToStack(g.get(), null, "delete");
             gradeRepository.deleteGradeByGradeId(id);
-        } catch (EmptyResultDataAccessException ignored){}
+        } catch (EmptyResultDataAccessException ignored) {
+        }
         return g;
     }
+
     @Transactional
     public Optional<Grade> postGrade(Grade g) {
-        if (studentService.doesAssociationExist(g.getStudentId(),g.getSubjectId()))
-        {g.setGradeId(0);
-        g=gradeRepository.save(g);
-        gradeUndoService.addToStack(g,null,"post");
-        return Optional.of(g);}
-        else { return Optional.empty();}
+        if (studentService.doesAssociationExist(g.getStudentId(), g.getSubjectId())) {
+            g.setGradeId(0);
+            g = gradeRepository.save(g);
+            gradeUndoService.addToStack(g, null, "post");
+            return Optional.of(g);
+        } else {
+            return Optional.empty();
+        }
     }
+
     @Transactional
     public Optional<Grade> putGrade(Grade newGrade) {
-        if (studentService.doesAssociationExist(newGrade.getStudentId(),newGrade.getSubjectId())){
-        Optional<Grade> oldGrade= Optional.ofNullable(gradeRepository.getGradeByGradeId(newGrade.getGradeId()));
-        if (oldGrade.isPresent())
-        {   gradeRepository.save(newGrade);
-            gradeUndoService.addToStack(newGrade,oldGrade.get(),"put");}
-        else
-        {
-            gradeRepository.save(newGrade);
-            gradeUndoService.addToStack(newGrade,null,"putNew");}
-        return Optional.of(newGrade);}
-        else {return Optional.empty();}
+        if (studentService.doesAssociationExist(newGrade.getStudentId(), newGrade.getSubjectId())) {
+            Optional<Grade> oldGrade = Optional.ofNullable(gradeRepository.getGradeByGradeId(newGrade.getGradeId()));
+            if (oldGrade.isPresent()) {
+                gradeRepository.save(newGrade);
+                gradeUndoService.addToStack(newGrade, oldGrade.get(), "put");
+            } else {
+                gradeRepository.save(newGrade);
+                gradeUndoService.addToStack(newGrade, null, "putNew");
+            }
+            return Optional.of(newGrade);
+        } else {
+            return Optional.empty();
+        }
     }
 }

@@ -30,7 +30,7 @@ public class SubjectServiceTest {
 
     @BeforeAll
     static void setUp() {
-       dataForTests=new DataForTests();
+        dataForTests = new DataForTests();
     }
 
     @Test
@@ -40,37 +40,37 @@ public class SubjectServiceTest {
         Mockito.when(subjectRepository.findAll()).thenReturn(iterable);
         List<Subject> subjectList = subjectService.getSubjects();
 
-        Assertions.assertEquals(2,subjectList.size());
+        Assertions.assertEquals(2, subjectList.size());
     }
 
     @Test
     void getStudentsBySubject() {
-        Subject subject=dataForTests.getSubjectSet().stream().filter(e->e.getId()==1).toList().get(0);
+        Subject subject = dataForTests.getSubjectSet().stream().filter(e -> e.getId() == 1).toList().get(0);
 
         Mockito.when(subjectRepository.getSubjectById(1)).thenReturn(subject);
         List<Student> result = subjectService.getStudentsBySubject(1);
 
-        Assertions.assertEquals(2,result.size());
+        Assertions.assertEquals(2, result.size());
     }
 
     @Test
     void getGradesBySubjectAndStudent() {
         List<Grade> expected = new ArrayList<>();
-        expected= dataForTests.getGradeSet().stream().filter(e-> e.getGradeId()==1&&e.getSubjectId()==1).toList();
+        expected = dataForTests.getGradeSet().stream().filter(e -> e.getGradeId() == 1 && e.getSubjectId() == 1).toList();
 
-        Mockito.when(gradeRepository.getGradeBySubjectIdAndStudentId(1,1)).thenReturn(expected);
-        Assertions.assertEquals(1,gradeRepository.getGradeBySubjectIdAndStudentId(1,1).size());
+        Mockito.when(gradeRepository.getGradeBySubjectIdAndStudentId(1, 1)).thenReturn(expected);
+        Assertions.assertEquals(1, gradeRepository.getGradeBySubjectIdAndStudentId(1, 1).size());
     }
 
     @Test
     void putSubject() {
         SubjectDTO subjectDTO = new SubjectDTO("adb", 1);
-        Subject subject = new Subject("adb",1,null);
+        Subject subject = new Subject("adb", 1, null);
 
         Mockito.when(subjectRepository.save(Mockito.any())).thenReturn(subject);
         Optional<SubjectDTO> result = subjectService.putSubject(subjectDTO);
 
-        Assertions.assertEquals(1,result.get().getId());
-        Assertions.assertEquals(Optional.of(subjectDTO),result);
+        Assertions.assertEquals(1, result.get().getId());
+        Assertions.assertEquals(Optional.of(subjectDTO), result);
     }
 }

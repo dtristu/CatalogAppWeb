@@ -41,17 +41,17 @@ public class SubjectControllerTest {
 
     @BeforeEach
     void setUp() {
-        Subject subject1= new Subject("abc",1,new HashSet<Student>());
-        subjectList=new ArrayList<>();
+        Subject subject1 = new Subject("abc", 1, new HashSet<Student>());
+        subjectList = new ArrayList<>();
         subjectList.add(subject1);
-        testResponseEntity= new ResponseEntity<>(subjectList,HttpStatus.OK);
+        testResponseEntity = new ResponseEntity<>(subjectList, HttpStatus.OK);
 
-        studentList= new ArrayList<>();
-        student = new Student("abc",1,new HashSet<Subject>(),new HashSet<Grade>());
+        studentList = new ArrayList<>();
+        student = new Student("abc", 1, new HashSet<Subject>(), new HashSet<Grade>());
         studentList.add(student);
         listResponseEntityStudent = new ResponseEntity<>(studentList, HttpStatus.OK);
 
-        testGrade = new Grade(2,3,new Date(1234),4,5);
+        testGrade = new Grade(2, 3, new Date(1234), 4, 5);
         gradeList = new ArrayList<>();
         gradeList.add(testGrade);
         listResponseEntityGrade = new ResponseEntity<>(gradeList, HttpStatus.OK);
@@ -61,30 +61,30 @@ public class SubjectControllerTest {
     void getSubjects() {
         Mockito.when(subjectService.getSubjects()).thenReturn(subjectList);
         ResponseEntity<List<Subject>> responseEntity = subjectController.getSubjects();
-        Assertions.assertEquals(testResponseEntity,responseEntity);
+        Assertions.assertEquals(testResponseEntity, responseEntity);
     }
 
     @Test
     void getStudentsBySubject() {
         Mockito.when(subjectService.getStudentsBySubject(1)).thenReturn(studentList);
         ResponseEntity<List<Student>> responseEntity = subjectController.getStudentsBySubject(1);
-        Assertions.assertEquals(listResponseEntityStudent,responseEntity);
+        Assertions.assertEquals(listResponseEntityStudent, responseEntity);
     }
 
     @Test
     void getGradesBySubjectAndStudent() {
-        Mockito.when(subjectService.getGradesBySubjectAndStudent(1,1)).thenReturn(gradeList);
-        ResponseEntity<List<Grade>> responseEntity = subjectController.getGradesBySubjectAndStudent(1,1);
-        Assertions.assertEquals(listResponseEntityGrade,responseEntity);
+        Mockito.when(subjectService.getGradesBySubjectAndStudent(1, 1)).thenReturn(gradeList);
+        ResponseEntity<List<Grade>> responseEntity = subjectController.getGradesBySubjectAndStudent(1, 1);
+        Assertions.assertEquals(listResponseEntityGrade, responseEntity);
     }
 
     @Test
     void putSubject() {
-        SubjectDTO subjectDTO= new SubjectDTO("abc",1);
-        ResponseEntity<SubjectDTO> testResponseEntitySubject = new ResponseEntity<>(subjectDTO,HttpStatus.OK);
+        SubjectDTO subjectDTO = new SubjectDTO("abc", 1);
+        ResponseEntity<SubjectDTO> testResponseEntitySubject = new ResponseEntity<>(subjectDTO, HttpStatus.OK);
 
         Mockito.when(subjectService.putSubject(subjectDTO)).thenReturn(Optional.of(subjectDTO));
         ResponseEntity<SubjectDTO> responseEntity = subjectController.putSubject(subjectDTO);
-        Assertions.assertEquals(testResponseEntitySubject,responseEntity);
+        Assertions.assertEquals(testResponseEntitySubject, responseEntity);
     }
 }

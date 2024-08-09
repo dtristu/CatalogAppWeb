@@ -23,30 +23,31 @@ public class SubjectService {
     GradeRepository gradeRepository;
 
     public List<Subject> getSubjects() {
-        Iterable<Subject> s=subjectRepository.findAll();
-        List<Subject> subjects=new ArrayList<>();
-            s.forEach(subjects::add);
-    return subjects;
+        Iterable<Subject> s = subjectRepository.findAll();
+        List<Subject> subjects = new ArrayList<>();
+        s.forEach(subjects::add);
+        return subjects;
     }
 
     public List<Student> getStudentsBySubject(int id) {
-    Subject subject=subjectRepository.getSubjectById(id);
-    for (Student student:subject.getStudents())
-    {
-        Set<Grade> grades= student.getGrades();
-        grades=grades.stream().filter(e->e.getSubjectId()==id).collect(Collectors.toSet());
-        student.setGrades(grades);
+        Subject subject = subjectRepository.getSubjectById(id);
+        for (Student student : subject.getStudents()) {
+            Set<Grade> grades = student.getGrades();
+            grades = grades.stream().filter(e -> e.getSubjectId() == id).collect(Collectors.toSet());
+            student.setGrades(grades);
+        }
+        return subject.getStudents().stream().toList();
     }
-    return subject.getStudents().stream().toList();}
 
     public List<Grade> getGradesBySubjectAndStudent(int subjectId, int studentId) {
-    return gradeRepository.getGradeBySubjectIdAndStudentId(subjectId,studentId);
+        return gradeRepository.getGradeBySubjectIdAndStudentId(subjectId, studentId);
     }
 
     public Optional<SubjectDTO> putSubject(SubjectDTO s) {
-    Subject subject=new Subject(s.getName(),s.getId(),null);
-    subject=subjectRepository.save(subject);
-    s.setId(subject.getId());
-    s.setName(subject.getName());
-    return Optional.of(s);}
+        Subject subject = new Subject(s.getName(), s.getId(), null);
+        subject = subjectRepository.save(subject);
+        s.setId(subject.getId());
+        s.setName(subject.getName());
+        return Optional.of(s);
+    }
 }

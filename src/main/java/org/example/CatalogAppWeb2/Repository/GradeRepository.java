@@ -5,10 +5,10 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface GradeRepository extends CrudRepository<Grade,Integer> {
+public interface GradeRepository extends CrudRepository<Grade, Integer> {
     Grade getGradeByGradeId(int gradeId);
 
     void deleteGradeByGradeId(int gradeId);
 
-    List<Grade> getGradeBySubjectIdAndStudentId(int subjectId,int studentId);
+    List<Grade> getGradeBySubjectIdAndStudentId(int subjectId, int studentId);
 }

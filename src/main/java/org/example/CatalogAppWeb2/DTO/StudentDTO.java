@@ -3,22 +3,26 @@ package org.example.CatalogAppWeb2.DTO;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name ="studenti",schema = "mainschema")
-@Tag(name= "Student DTO")
+@Table(name = "studenti", schema = "mainschema")
+@Tag(name = "Student DTO")
 public class StudentDTO {
+    @Schema(name = "name", example = "Kevin")
     @Column(name = "nume")
-    @Schema(name = "Student name", example = "Kevin")
     private String name;
+    @Schema(name = "id", example = "1")
     @Id
     @Column(name = "nrmatricol")
-    @Schema(name = "Student ID", example = "1")
     private int id;
-    @Schema(name = "Subjects, only Id")
+    @Schema(name = "subjectsId",description = "Subjects, only Id")
+    @NotNull
+    @NotEmpty
     private Set<Integer> subjectsId;
 
     public StudentDTO() {

@@ -14,7 +14,7 @@ import java.util.Stack;
 @Transactional
 public class GradeUndoService {
 
-    private final Stack<Command> stack=new Stack<>();
+    private final Stack<Command> stack = new Stack<>();
     @Autowired
     GradeRepository gradeRepository;
 
@@ -22,75 +22,83 @@ public class GradeUndoService {
         private final String lastCommand;
         private final Grade grade;
         private final Grade grade2;
-        public Command(Grade g,Grade g2,String s) {
-            this.grade=g;
-            this.lastCommand=s;
-            this.grade2=g2;
+
+        public Command(Grade g, Grade g2, String s) {
+            this.grade = g;
+            this.lastCommand = s;
+            this.grade2 = g2;
         }
 
     }
 
-    public void addToStack(Grade g,Grade g2,String s)
-    {
+    public void addToStack(Grade g, Grade g2, String s) {
         stack.push(new Command(g, g2, s));
-        if (stack.size()>10){
+        if (stack.size() > 10) {
             stack.removeElementAt(0);
         }
     }
-    public String undo()
-    {
-        String r="";
-        if (stack.isEmpty())
-        {return "Nothing to undo!"; }
 
-        Command c= stack.peek();
+    public String undo() {
+        String r = "";
+        if (stack.isEmpty()) {
+            return "Nothing to undo!";
+        }
+
+        Command c = stack.peek();
         stack.pop();
         //noinspection EnhancedSwitchMigration
-        switch (c.lastCommand){
+        switch (c.lastCommand) {
             case "get":
-                r="Get command. Nothing to undo.";
-                        break;
+                r = "Get command. Nothing to undo.";
+                break;
             case "delete":
                 undoDelete(c.grade);
-                r="Undid detete!";
+                r = "Undid detete!";
                 break;
             case "put":
-                undoPut(c.grade,c.grade2);
-                r="Undid put!";
+                undoPut(c.grade, c.grade2);
+                r = "Undid put!";
                 break;
             case "putNew":
-                undoPutNew(c.grade,c.grade2);
-                r="Undid put!";
+                undoPutNew(c.grade, c.grade2);
+                r = "Undid put!";
                 break;
             case "post":
                 undoPost(c.grade);
-                r="Undid post!";
+                r = "Undid post!";
                 break;
         }
-    return r;}
+        return r;
+    }
+
     @Transactional
     private void undoPost(Grade grade) {
         try {
             gradeRepository.deleteGradeByGradeId(grade.getGradeId());
-        } catch (EmptyResultDataAccessException ignored){}
+        } catch (EmptyResultDataAccessException ignored) {
+        }
 
     }
+
     @Transactional
     private void undoPutNew(Grade grade, Grade grade2) {
         try {
             gradeRepository.deleteGradeByGradeId(grade.getGradeId());
-        } catch (EmptyResultDataAccessException ignored){}
+        } catch (EmptyResultDataAccessException ignored) {
+        }
     }
+
     @Transactional
     private void undoPut(Grade grade, Grade grade2) {
-        try{
+        try {
             gradeRepository.deleteGradeByGradeId(grade.getGradeId());
             gradeRepository.save(grade2);
-        } catch (EmptyResultDataAccessException ignored){}
+        } catch (EmptyResultDataAccessException ignored) {
+        }
     }
+
     @Transactional
-    private void undoDelete(Grade g)
-    {
+    private void undoDelete(Grade g) {
         g.setGradeId(0);
         gradeRepository.save(g);
     }

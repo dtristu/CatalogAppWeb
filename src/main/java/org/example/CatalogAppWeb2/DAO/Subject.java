@@ -4,23 +4,27 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name ="materii",schema = "mainschema")
-@Tag(name= "Subject")
+@Table(name = "materii", schema = "mainschema")
+@Tag(name = "Subject")
 public class Subject {
-
+    @Schema(name = "name", example = "Math")
     @Column(name = "numematerie")
-    @Schema(name = "Subject name", example = "Math")
     private String name;
 
+    @Schema(name = "id", example = "1")
+    @NotNull
+    @Max(1000000)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codmaterie")
-    @Schema(name = "Subject Id", example = "1")
     public int id;
 
     @ManyToMany(cascade = {CascadeType.MERGE})
@@ -30,7 +34,7 @@ public class Subject {
             inverseJoinColumns = {@JoinColumn(name = "nrmatricol")}
     )
     @JsonBackReference
-    @Schema(name = "Students")
+    @Schema(name = "students")
     private Set<Student> students;
 
     public Subject() {

@@ -4,14 +4,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.*;
+
 import java.sql.Date;
 import java.util.Objects;
 
 
 @Entity
-@Table(name ="note",schema = "mainschema")
+@Table(name = "note", schema = "mainschema")
 //@Access(AccessType.PROPERTY)
-@Tag(name="Grade")
+@Tag(name = "Grade")
 public class Grade {
     public Grade() {
     }
@@ -25,28 +26,28 @@ public class Grade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "nrnota")
-    @Schema(name = "Grade Id", example = "1")
+    @Column(name = "nrnota")
+    @Schema(name = "gradeId", example = "1")
     private int gradeId;
 
-    @Column (name ="valoareanotei")
-    @Schema(name = "Grade Value", example = "10")
+    @Column(name = "valoareanotei")
+    @Schema(name = "gradeValue", example = "10")
     private int gradeValue;
-    @Column (name = "data")
+    @Column(name = "data")
     @Basic
-    @Schema(name = "Data")
+    @Schema(name = "date")
     private Date date;
-    @Schema(name = "Subject Id", example = "1")
-    @Column (name ="materiecod")
+    @Schema(name = "subjectId", example = "1")
+    @Column(name = "materiecod")
     private int subjectId;
-    @Column(name ="student")
-    @Schema(name = "Student Id", example = "1")
+    @Column(name = "student")
+    @Schema(name = "studentId", example = "1")
     private int studentId;
     @ManyToOne
-    @JoinColumn (name ="student", insertable = false, updatable = false )
+    @JoinColumn(name = "student", insertable = false, updatable = false)
     @JsonIgnore
     //nu am reusit sa scot eroarea cu lazy load
-    @Schema(name = "Student")
+    @Schema(name = "student")
     private Student student;
 
     public Student getStudent() {

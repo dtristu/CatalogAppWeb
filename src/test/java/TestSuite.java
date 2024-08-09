@@ -7,7 +7,7 @@ import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
 @Suite
-@SelectClasses( {GradeControllerTest.class , SubjectControllerTest.class, StudentControllerTest.class,
-        SubjectServiceTest.class, StudentServiceTest.class} )
+@SelectClasses({GradeControllerTest.class, SubjectControllerTest.class, StudentControllerTest.class,
+        SubjectServiceTest.class, StudentServiceTest.class})
 public class TestSuite {
 }

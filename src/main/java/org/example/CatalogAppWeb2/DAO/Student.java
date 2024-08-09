@@ -13,27 +13,28 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name ="studenti",schema = "mainschema")
-@Tag(name="Student")
+@Table(name = "studenti", schema = "mainschema")
+@Tag(name = "Student")
 public class Student {
+    @Schema(name = "name", example = "Kevin")
     @Column(name = "nume")
     @NotNull(message = "Student name cannot be null")
-    @Schema(name = "Student name", example = "Kevin")
     private String name;
+
+    @Schema(name = "id", example = "1")
     @Id
     @Column(name = "nrmatricol")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(name = "Student ID", example = "1")
     private int id;
 
+    @Schema(name = "subjects")
     @ManyToMany(mappedBy = "students")
     @Fetch(FetchMode.JOIN)
     @JsonManagedReference
-    @Schema(name = "Subjects")
     private Set<Subject> subjects;
 
+    @Schema(name = "grades")
     @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
-    @Schema(name = "Grades")
     private Set<Grade> grades;
 
     public Student(String name, int id, Set<Subject> subjects, Set<Grade> grades) {
@@ -69,11 +70,11 @@ public class Student {
     public void setSubjects(Set<Subject> subjects) {
         this.subjects = subjects;
     }
-    public void addSubject(Subject subject)
-    {
+
+    public void addSubject(Subject subject) {
         Set<Subject> currentSubjects = Objects.requireNonNullElseGet(this.subjects, HashSet::new);
         currentSubjects.add(subject);
-        this.subjects=currentSubjects;
+        this.subjects = currentSubjects;
     }
 
     public Set<Grade> getGrades() {

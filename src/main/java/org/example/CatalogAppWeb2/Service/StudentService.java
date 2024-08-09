@@ -27,58 +27,60 @@ public class StudentService {
     private record StudentAverage(double average, Student student) {
     }
 
-    public boolean doesAssociationExist (int studentId, int subjectId){
-    boolean b =false;
-        Student student=studentRepository.getStudentById(studentId);
-        Set<Subject> subjects=student.getSubjects();
-        subjects=subjects.stream().filter(e->e.getId()==subjectId).collect(Collectors.toSet());
-        if (!subjects.isEmpty())
-        {b=true;}
-    return b;}
+    public boolean doesAssociationExist(int studentId, int subjectId) {
+        boolean b = false;
+        Student student = studentRepository.getStudentById(studentId);
+        Set<Subject> subjects = student.getSubjects();
+        subjects = subjects.stream().filter(e -> e.getId() == subjectId).collect(Collectors.toSet());
+        if (!subjects.isEmpty()) {
+            b = true;
+        }
+        return b;
+    }
 
     //Overloaded
     public List<Student> getTopStudents() {
         List<Student> students = (List<Student>) studentRepository.findAll();
 
-        List<StudentAverage> orderedStudents=new ArrayList<>();
+        List<StudentAverage> orderedStudents = new ArrayList<>();
         for (Student student : students) {
             double avg = student.getGrades().stream().mapToInt(Grade::getGradeValue).average().orElse(0);
             orderedStudents.add(new StudentAverage(avg, student));
         }
         //orderedStudents.sort(e-> e.average );
         //bubble sort
-        int n=orderedStudents.size();
-        for(int i = 0;i < n; i++){
-            for(int j=0;j < n - 1; j++){
+        int n = orderedStudents.size();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - 1; j++) {
                 //change sign to change order < or >
-                if(orderedStudents.get(j).average < orderedStudents.get(j).average)
-                {
-                    StudentAverage temp= orderedStudents.get(j);
-                    orderedStudents.set(j,orderedStudents.get(j+1));
-                    orderedStudents.set(j+1,temp);
+                if (orderedStudents.get(j).average < orderedStudents.get(j).average) {
+                    StudentAverage temp = orderedStudents.get(j);
+                    orderedStudents.set(j, orderedStudents.get(j + 1));
+                    orderedStudents.set(j + 1, temp);
                 }
             }
         }
-        List<Student> result=new ArrayList<>();
-        for(int i = 0;i < n; i++)
-        {
+        List<Student> result = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
             result.add(orderedStudents.get(i).student());
         }
         return result;
     }
+
     //Overloaded
     //just removes averages and leaves the ordered students list
     public List<Student> getTopStudents(int subjectId) {
-        List<StudentAverage> orderedStudents=getTopStudentsAndAverages(subjectId);
-        List<Student> result=new ArrayList<>();
+        List<StudentAverage> orderedStudents = getTopStudentsAndAverages(subjectId);
+        List<Student> result = new ArrayList<>();
 
         for (StudentAverage orderedStudent : orderedStudents) {
             result.add(orderedStudent.student());
         }
         return result;
     }
+
     //actual method body
-    private List<StudentAverage> getTopStudentsAndAverages(int subjectId){
+    private List<StudentAverage> getTopStudentsAndAverages(int subjectId) {
         List<Student> students = subjectService.getStudentsBySubject(subjectId);
 
         for (Student student : students) {
@@ -127,51 +129,50 @@ public class StudentService {
                 }
             }
         }*/
-        List<StudentAverage> orderedStudents=new ArrayList<>();
+        List<StudentAverage> orderedStudents = new ArrayList<>();
         for (Student student : students) {
             double avg = student.getGrades().stream().mapToInt(Grade::getGradeValue).average().orElse(0);
             orderedStudents.add(new StudentAverage(avg, student));
         }
         //bubble sort
-        int n=orderedStudents.size();
-        for(int i = 0;i < n; i++){
-            for(int j=0;j < n - 1; j++){
+        int n = orderedStudents.size();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - 1; j++) {
                 //change sign to change order < or >
-                if(orderedStudents.get(j).average < orderedStudents.get(j).average)
-                {
-                    StudentAverage temp= orderedStudents.get(j);
-                    orderedStudents.set(j,orderedStudents.get(j+1));
-                    orderedStudents.set(j+1,temp);
+                if (orderedStudents.get(j).average < orderedStudents.get(j).average) {
+                    StudentAverage temp = orderedStudents.get(j);
+                    orderedStudents.set(j, orderedStudents.get(j + 1));
+                    orderedStudents.set(j + 1, temp);
                 }
             }
         }
         return orderedStudents;
     }
+
     @Transactional
     public Optional<Student> putStudent(StudentDTO studentDTO) {
-        Student s=new Student();
+        Student s = new Student();
         s.setId(studentDTO.getId());
         s.setName(studentDTO.getName());
 
-        Set<Integer> subjectsId=studentDTO.getSubjectsId();
-        for(Integer i:subjectsId)
-        {
-         Subject subject=subjectRepository.getSubjectById(i);
-         s.addSubject(subject);
-         Set<Student> students=subject.getStudents();
-         students.add(s);
-         subject.setStudents(students);
+        Set<Integer> subjectsId = studentDTO.getSubjectsId();
+        for (Integer i : subjectsId) {
+            Subject subject = subjectRepository.getSubjectById(i);
+            s.addSubject(subject);
+            Set<Student> students = subject.getStudents();
+            students.add(s);
+            subject.setStudents(students);
         }
 
-        s=studentRepository.save(s);
+        s = studentRepository.save(s);
 
         return Optional.of(s);
     }
 
-    public List<Student> getFailingStudents(int subjectId){
-        List<StudentAverage> studentAvg=getTopStudentsAndAverages(subjectId);
+    public List<Student> getFailingStudents(int subjectId) {
+        List<StudentAverage> studentAvg = getTopStudentsAndAverages(subjectId);
         studentAvg.removeIf(s -> s.average >= 5);
-        return studentAvg.stream().map(s->s.student).toList();
+        return studentAvg.stream().map(s -> s.student).toList();
     }
 
 }
